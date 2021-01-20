@@ -28,7 +28,16 @@ const LOCALES_MAP: Record<string, LOCALE_DATA> = {
       alt: 'US Flag',
     },
   },
+  'fr-FR': {
+    name: 'French',
+    img: {
+      filename: 'flag-en-us.svg',
+      alt: 'US Flag',
+    },
+  },
 }
+
+
 
 const I18nWidget: FC = () => {
   const [display, setDisplay] = useState(false)

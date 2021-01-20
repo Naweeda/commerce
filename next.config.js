@@ -10,6 +10,7 @@ module.exports = bundleAnalyzer({
     locales: ['en-US', 'es'],
     defaultLocale: 'en-US',
   },
+
   rewrites() {
     return [
       {

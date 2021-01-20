@@ -11,6 +11,8 @@ import { CartSidebarView } from '@components/cart'
 
 import { CommerceProvider } from '@bigcommerce/storefront-data-hooks'
 import type { Page } from '@bigcommerce/storefront-data-hooks/api/operations/get-all-pages'
+import type { CategoriesTree } from '@bigcommerce/storefront-data-hooks/api/operations/get-site-info'
+import HomeNav from '../HomeNav'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -41,7 +43,8 @@ const FeatureBar = dynamic(
 
 interface Props {
   pageProps: {
-    pages?: Page[]
+    pages?: Page[],
+    categories?: CategoriesTree[]
   }
 }
 
@@ -55,17 +58,21 @@ const Layout: FC<Props> = ({ children, pageProps }) => {
   } = useUI()
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   const { locale = 'en-US' } = useRouter()
-
+ 
   return (
     <CommerceProvider locale={locale}>
       <div className={cn(s.root)}>
         <Navbar />
-        <main className="fit">{children}</main>
+        
+        <main className="fit">
+          <HomeNav categories={pageProps.categories} />
+          {children}
+        </main>
         <Footer pages={pageProps.pages} />
 
         <Sidebar open={displaySidebar} onClose={closeSidebar}>
           <CartSidebarView />
-        </Sidebar>
+        </Sidebar> 
 
         <Modal open={displayModal} onClose={closeModal}>
           {modalView === 'LOGIN_VIEW' && <LoginView />}

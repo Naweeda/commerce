@@ -12,7 +12,7 @@ import { ProductView } from '@components/product'
 import { getConfig } from '@bigcommerce/storefront-data-hooks/api'
 import getProduct from '@bigcommerce/storefront-data-hooks/api/operations/get-product'
 import getAllPages from '@bigcommerce/storefront-data-hooks/api/operations/get-all-pages'
-import getAllProductPaths from '@bigcommerce/storefront-data-hooks/api/operations/get-all-product-paths'
+import getAllProductPaths from '@bigcommerce/storefront-data-hooks/api/operations/get-all-product-paths' 
 
 export async function getStaticProps({
   params,

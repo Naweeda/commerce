@@ -12,10 +12,11 @@ interface Props {
 }
 
 const Head: FC<Props> = ({ categories, brands, newestProducts }) => {
+  // console.log('CATE : ', categories)
   return (
-    <div className={s.root}>
-      <div className={s.asideWrapper}>
-        <div className={s.aside}>
+    <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+      {/* <div className={s.asideWrapper}>
+        <div className={s.aside}> */}
           <ul className="mb-10">
             <li className="py-1 text-base font-bold tracking-wide">
               <Link href={getCategoryPath('')}>
@@ -45,8 +46,10 @@ const Head: FC<Props> = ({ categories, brands, newestProducts }) => {
             ))}
           </ul>
         </div>
-      </div>
-      <div className="flex-1">
+    
+
+    
+      /* <div className="flex-1">
         <Grid layout="normal">
           {newestProducts.map(({ node }: any) => (
             <ProductCard
@@ -59,7 +62,9 @@ const Head: FC<Props> = ({ categories, brands, newestProducts }) => {
           ))}
         </Grid>
       </div>
-    </div>
+    </div> */
+
+ 
   )
 }
 

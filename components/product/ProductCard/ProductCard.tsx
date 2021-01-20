@@ -4,7 +4,7 @@ import Image from 'next/image'
 import type { FC } from 'react'
 import s from './ProductCard.module.css'
 import WishlistButton from '@components/wishlist/WishlistButton'
-
+import { Logo, Container } from '@components/ui'
 import usePrice from '@bigcommerce/storefront-data-hooks/use-price'
 import type { ProductNode } from '@bigcommerce/storefront-data-hooks/api/operations/get-all-products'
 
@@ -46,9 +46,10 @@ const ProductCard: FC<Props> = ({
         {variant === 'slim' ? (
           <div className="relative overflow-hidden box-border">
             <div className="absolute inset-0 flex items-center justify-end mr-8 z-20">
-              <span className="bg-black text-white inline-block p-3 font-bold text-xl break-words">
+              <span className="small-black text-white inline-block p-3 font-bold text-xl break-words">
                 {p.name}
               </span>
+              
             </div>
             <Image
               quality="85"
@@ -70,7 +71,7 @@ const ProductCard: FC<Props> = ({
                 <h3 className={s.productTitle}>
                   <span>{p.name}</span>
                 </h3>
-                <span className={s.productPrice}>{price}</span>
+                {/* <span className={s.productPrice}>{price}</span>  */}
               </div>
               <WishlistButton
                 className={s.wishlistButton}

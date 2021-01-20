@@ -9,6 +9,7 @@ import { getConfig } from '@bigcommerce/storefront-data-hooks/api'
 import getAllProducts from '@bigcommerce/storefront-data-hooks/api/operations/get-all-products'
 import getSiteInfo from '@bigcommerce/storefront-data-hooks/api/operations/get-site-info'
 import getAllPages from '@bigcommerce/storefront-data-hooks/api/operations/get-all-pages'
+import HomeNav from '@components/common/HomeNav'
 
 export async function getStaticProps({
   preview,
@@ -82,6 +83,8 @@ export default function Home({
   categories,
   newestProducts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+  console.log('Home data:',  categories, brands)
   return (
     <div>
       <Grid>
